@@ -1,0 +1,8 @@
+from pydantic import BaseModel, Field
+
+class ProductSchema(BaseModel):
+    name: str = Field(min_length=2, max_length=50)
+    price: int = Field(ge=1)
+    quantities: int = Field(ge=1)
+
+    
